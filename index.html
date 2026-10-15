@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Home tech help in Walnut, evenings and weekends. PCs, Macs, phones, printers and Wi-Fi. $25 per half hour.">
+<title>DE-IT · Home tech help in Walnut</title>
+<style>
+  :root{--green:#0a7a4a;--bg:#131518;--card:#1a1d21;--text:#ececE8;--muted:#c2c7cc;--line:#2a2e33}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:0 1.5rem}
+  header{padding:2.5rem 0 0}
+  header img{height:44px;width:auto}
+  .hero{padding:5rem 0 4rem}
+  .kicker{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin:0 0 1.1rem}
+  h1{font-size:clamp(2.2rem,5.5vw,3.3rem);font-weight:600;letter-spacing:-.03em;line-height:1.1;margin:0 0 1.25rem}
+  .lead{font-size:1.1rem;color:var(--muted);max-width:32rem;margin:0 0 2.25rem}
+  .cta{display:inline-block;background:var(--green);color:#ffffff;padding:.9rem 1.5rem;font-weight:600;border-radius:2px;text-decoration:none}
+  .row{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;padding:3rem 0;border-top:1px solid var(--line)}
+  .row div{border:1px solid var(--line);padding:1.1rem .5rem;text-align:center;font-size:.95rem}
+  @media(max-width:560px){.row{grid-template-columns:repeat(2,1fr)}}
+  .price{padding:3rem 0;border-top:1px solid var(--line)}
+  .price p.big{font-size:1.7rem;font-weight:600;margin:0 0 .5rem}
+  .price p.big span{color:var(--green)}
+  .price p{color:var(--muted);margin:0}
+  .price p.big{color:var(--text)}
+  @media(max-width:560px){.hero{display:flex;flex-direction:column}.cta{align-self:flex-end;padding:1.05rem 1.8rem;font-size:1.05rem}}
+  footer{padding:2.5rem 0 4rem;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+  a.mail{color:var(--text)}
+  canvas#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+  .wrap{position:relative;z-index:1}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<script>
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const c=document.getElementById('bg'),x=c.getContext('2d');let w,h,d=Math.min(devicePixelRatio||1,2),p=[];
+  function size(){w=innerWidth;h=innerHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);
+    const n=Math.round(Math.min(60,w*h/22000));p=[];for(let i=0;i<n;i++)p.push(mk(true));}
+  function mk(any){return{x:any?Math.random()*w:Math.random()*w-h*.3,y:any?Math.random()*h:-10,
+    v:.15+Math.random()*.35,r:.6+Math.random()*1.1,a:.04+Math.random()*.11,g:Math.random()<.3,t:Math.random()<.5?'1':'0'};}
+  function step(){x.clearRect(0,0,w,h);for(const q of p){q.x+=q.v*.8;q.y+=q.v;
+      if(q.y>h+10||q.x>w+10)Object.assign(q,mk(false));
+      x.fillStyle=q.g?`rgba(43,182,115,${q.a})`:`rgba(236,236,232,${q.a})`;
+      x.font=`${Math.round(9+q.r*4)}px ui-monospace,Menlo,monospace`;
+      if(Math.random()<.004)q.t=q.t=='1'?'0':'1';
+      x.fillText(q.t,q.x,q.y);}
+    requestAnimationFrame(step);}
+  addEventListener('resize',size);size();step();
+})();
+</script>
+
+<div class="wrap">
+  <header><img src="de-it-logo-transparent-light.png" alt="DE-IT"></header>
+  <div class="hero">
+    <p class="kicker">Walnut · evenings &amp; weekends</p>
+    <h1>Tech trouble?<br>I'll come fix it.</h1>
+    <p class="lead">Slow computer, printer that won't print, Wi‑Fi that keeps dropping. Email what's wrong and I'll come to your home.</p>
+    <a class="cta" href="mailto:de.it@dietzenterprise.com">Email for help</a>
+  </div>
+  <div class="row"><div>PCs &amp; Macs</div><div>Phones</div><div>Printers</div><div>Wi‑Fi</div></div>
+  <div class="price">
+    <p class="big"><span>$25</span> per half hour</p>
+    <p>No trip fee within 5 miles of Walnut. Pay when the job is complete.</p>
+  </div>
+  <footer><a class="mail" href="mailto:de.it@dietzenterprise.com">de.it@dietzenterprise.com</a></footer>
+</div>
+</body>
+</html>
