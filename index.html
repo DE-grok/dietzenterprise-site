@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Home tech help in Walnut, evenings and weekends. PCs, Macs, phones, printers and Wi-Fi. $25 per half hour.">
 <title>DE-IT · Home tech help in Walnut</title>
 <style>
   :root{--green:#0a7a4a;--bg:#131518;--card:#1a1d21;--text:#ececE8;--muted:#c2c7cc;--line:#2a2e33}
@@ -26,7 +25,13 @@
   .price p{color:var(--muted);margin:0}
   .price p.big{color:var(--text)}
   @media(max-width:560px){.hero{display:flex;flex-direction:column}.cta{align-self:flex-end;padding:1.05rem 1.8rem;font-size:1.05rem}}
+  .row{padding-bottom:1rem}
+  .more{color:var(--muted);text-align:center;margin:0 0 3rem;font-size:.95rem}
   footer{padding:2.5rem 0 4rem;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+  .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.25rem}
+  .cta-alt{color:var(--muted);font-size:.98rem;margin:0}
+  .cta-alt a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--line)}
+  @media(max-width:560px){.cta-row{flex-direction:column;align-items:flex-end}}
   a.mail{color:var(--text)}
   canvas#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
   .wrap{position:relative;z-index:1}
@@ -56,17 +61,21 @@
 <div class="wrap">
   <header><img src="de-it-logo-transparent-light.png" alt="DE-IT"></header>
   <div class="hero">
-    <p class="kicker">Walnut · evenings &amp; weekends</p>
+    <p class="kicker">Walnut area · evenings &amp; Saturdays</p>
     <h1>Tech trouble?<br>I'll come fix it.</h1>
-    <p class="lead">Slow computer, printer that won't print, Wi‑Fi that keeps dropping. Email what's wrong and I'll come to your home.</p>
-    <a class="cta" href="mailto:de.it@dietzenterprise.com">Email for help</a>
+    <p class="lead">Slow computer, printer that won't print, Wi‑Fi that keeps dropping. Call, text or email what's wrong, and I'll set a time to come to your home.</p>
+    <div class="cta-row">
+      <a class="cta" href="https://tally.so/r/LD1EqG" target="_blank" rel="noopener">Request help</a>
+      <p class="cta-alt">or call/text <a href="tel:+12313334454">(231) 333-4454</a></p>
+    </div>
   </div>
   <div class="row"><div>PCs &amp; Macs</div><div>Phones</div><div>Printers</div><div>Wi‑Fi</div></div>
+  <p class="more">…and more. Don't see your problem? Just ask.</p>
   <div class="price">
     <p class="big"><span>$25</span> per half hour</p>
-    <p>No trip fee within 5 miles of Walnut. Pay when the job is complete.</p>
+    <p>Intro rate. Cash or check at the start of the visit. One follow-up included.<br>In town only. Not same-day. I never ask for bank logins or store passwords.</p>
   </div>
-  <footer><a class="mail" href="mailto:de.it@dietzenterprise.com">de.it@dietzenterprise.com</a></footer>
+  <footer>John Dietz · <a class="mail" href="tel:+12313334454">(231) 333-4454</a> · <a class="mail" href="mailto:de.it@dietzenterprise.com">de.it@dietzenterprise.com</a></footer>
 </div>
 </body>
 </html>
